@@ -1,2 +1,2 @@
-# Finiance tracker
+# Finance tracker
 SPE major project
