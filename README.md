@@ -1,1 +1,2 @@
-# Desis-project
+# Finance tracker
+SPE major project
