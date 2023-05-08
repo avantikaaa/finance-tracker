@@ -1,0 +1,77 @@
+*
+{
+    font-family: 'Climate Crisis', cursive;
+    font-family: 'Raleway', sans-serif;
+    /* background-color: #f4e7ff; */
+}
+.sap
+{
+    position: absolute;
+    top: 20px;
+    left: 400px;
+}
+.card-type-1
+{
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+    box-shadow: 2px 2px lightgray;
+    /* background-color: #f4e7ff; */
+}
+.card1-heading
+{
+    font-size: 15px;
+    color: grey;
+}
+.card1-body
+{
+    color: black;
+    font-size: 20px;
+}
+.part1, .part2, .part3
+{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.card-type-2
+{
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px lightgray;
+    border-radius: 10px;
+    width: 470px;
+    /* background-color: #f4e7ff; */
+}
+.card-type-3
+{
+    padding: 10px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px lightgray;
+    border-radius: 10px;
+    width: 470px;
+    height: 270px;
+    /* background-color: #f4e7ff; */
+}
+#upcoming
+{
+    overflow-y: scroll;
+}
+.icon-3
+{
+    color: #9D4EDD;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #edd7fa;
+    font-size: 30px;
+}
+.heading3
+{
+    font-size: 25px;
+    color: #9D4EDD;
+}

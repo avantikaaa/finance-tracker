@@ -1,0 +1,49 @@
+*
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+.login-button
+{
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 1vh;
+    background-color: #9D4EDD;
+    color: white;
+    border: 0px;
+    padding: 8px;
+}
+.form-part
+{
+    margin-bottom: 15px;
+}
+.total
+{
+    display: flex;
+    /* align-items: center; */
+}
+.left-part
+{
+    background-color: #7B2CBF;
+}
+.loginImage1
+{
+    height: 200px;
+    margin-left: 42px;
+}
+h4
+{
+    width: 400px;
+}
+.right-part
+{
+    margin-left: 350px;
+}
+.signup-link
+{
+    float: right;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #9D4EDD;
+}

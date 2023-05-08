@@ -1,0 +1,35 @@
+.name
+{
+  color: #9D4EDD;
+  font-size: 20px;
+  text-align: center;
+}
+
+.friend-card
+{
+  border: 1px lightgray solid;
+  width: 750px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.friend-text
+{
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  width: 150px;
+}
+.friend-header, .friend-rows
+{
+  display: flex;
+}
+.settle-button
+{
+  color: white;
+  background-color: #9D4EDD;
+  border: none;
+  font-size: 15px;
+  padding: 2px;
+  width: 100px;
+}

@@ -1,0 +1,26 @@
+.logout-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #9D4EDD;
+  padding: 20px;
+  background-color: white;
+}
+  
+.logout-popup button {
+  margin: 10px;
+  padding: 5px 10px;
+  width: 100px;
+
+}
+
+.button{
+  position: absolute;
+  left: 680px;
+}
+
+.confirmation
+{
+  color: black;
+}

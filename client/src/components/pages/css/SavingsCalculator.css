@@ -1,0 +1,23 @@
+.savings
+{
+    position: absolute;
+    top: 40px;
+    left: 400px;
+}
+.heading1
+{
+    font-size: 20px;
+}
+.calculate-button
+{
+    padding: 7px;
+    background-color: #9D4EDD;
+    color: white;
+    border: 1px solid #9D4EDD;
+    margin-top: 10px;
+    width: inherit;
+}
+.savings-form
+{
+    margin-left: 300px;
+}

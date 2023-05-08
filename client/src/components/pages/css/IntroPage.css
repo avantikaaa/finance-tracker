@@ -1,0 +1,62 @@
+.partOne
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.USP
+{
+    font-family: 'Climate Crisis', cursive;
+    font-family: 'Raleway', sans-serif;
+    width: 600px;
+}
+h1
+{
+    color: #9D4EDD;
+}
+.desc
+{
+    color: #C77DFF;
+    font-size: 20px;
+}
+.introImage1
+{
+    height: 400px;
+    float: right;
+}
+
+.partTwo
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.featureImage
+{
+    height: 100px;
+}
+h5
+{
+    text-align: center;
+    color: #9D4EDD;
+    padding: 10px;
+    margin: 0px;
+}
+.flex-item
+{
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+}
+.title
+{
+    font-family: 'Climate Crisis', cursive;
+    color: #7B2CBF;
+    font-size: 25px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+p
+{
+    color: #C77DFF;
+}

@@ -1,0 +1,16 @@
+.transaction-card
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+  width: 1000px;
+  justify-content: space-between;
+}
+.transaction-part
+{
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  width: 150px;
+}

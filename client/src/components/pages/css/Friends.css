@@ -1,0 +1,17 @@
+.friends {
+  position: absolute;
+  top: 40px;
+  left: 400px;
+}
+  
+.borrowed-part, .lent-part
+{
+  height: 260px;
+  width: 800px;
+  overflow-y: auto;
+}
+
+.friends-heading
+{
+  font-size: 20px;
+}

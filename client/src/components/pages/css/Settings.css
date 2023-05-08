@@ -1,0 +1,40 @@
+.settings
+{
+    position: absolute;
+    top: 50px;
+    left: 670px;
+    border: 1px solid #7B2CBF;
+    padding: 20px;
+}
+.dp
+{
+    height: 70px;
+}
+
+.label2
+{
+    margin-top: 10px;
+}
+
+.cancel-button
+{
+    border: 2px solid #7B2CBF;
+    color: #7B2CBF;
+    background-color: white;
+    padding: 10px;
+}
+
+.save-button
+{
+    background-color: #7B2CBF;
+    color: white;
+    border: 2px solid #7B2CBF;
+    padding: 10px;
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}

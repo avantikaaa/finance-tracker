@@ -1,0 +1,58 @@
+.login-button
+{
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 1vh;
+    background-color: #9D4EDD;
+    color: white;
+    border: 0px;
+    padding: 8px;
+}
+.login-page
+{
+    margin-top: 30vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h4
+{
+    color: #7B2CBF;
+}
+form
+{
+    width: 30vw;
+}
+*
+{
+    font-family: 'Raleway', sans-serif;
+}
+.total
+{
+    display: flex;
+    /* align-items: center; */
+}
+.left-part
+{
+    background-color: #7B2CBF;
+}
+.loginImage1
+{
+    height: 200px;
+    margin-left: 42px;
+}
+h4
+{
+    width: 400px;
+}
+.right-part
+{
+    margin-left: 350px;
+}
+.signup-link
+{
+    float: right;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #9D4EDD;
+}

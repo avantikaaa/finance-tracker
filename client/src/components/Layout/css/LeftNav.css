@@ -1,0 +1,59 @@
+.leftnav
+{
+    position: fixed;
+    z-index: 100;
+}
+.sidebar {
+    height: 100%;
+    width: 280px;
+    background-color: #7B2CBF;
+}
+.title2
+{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 25px;
+}
+.items2
+{
+    font-family: 'Climate Crisis', cursive;
+    font-family: 'Raleway', sans-serif;
+    margin: 10px;
+    font-size: 18px;
+    color: white;
+}
+.icons2
+{
+    color: white;
+    font-size: 18px;
+    margin-left: 15px
+}
+.logo2
+{
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.heading
+{
+    color: #5A189A;
+    font-size: 15px;
+    font-family: 'Climate Crisis', cursive;
+    font-family: 'Raleway', sans-serif;
+    margin: 15px;
+    padding-bottom: 0px;
+}
+
+.logout
+{
+    font-family: 'Climate Crisis', cursive;
+    font-family: 'Raleway', sans-serif;
+    margin: 15px;
+    font-size: 18px;
+    background-color: #10002B;
+    padding: 15px;
+}
+.vert-nav
+{
+    display: inline;
+}
