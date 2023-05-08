@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
-const { BaseTransaction, discriminator } = require("./Transaction");
+const { BaseTransaction, BaseTransactionSchema } = require("./Transaction");
 const { Schema, model } = mongoose;
 
-const expenseSchema = new Schema({
+const extendSchema = require('mongoose-extend-schema');
+
+const expenseSchema = new extendSchema(BaseTransactionSchema, {
   from: { type: Schema.Types.ObjectId, ref: "User" },
   to: { type: String },
   dueDate: { type: Date },
   interest: { type: Number },
-  amount:{type: Number},
-  date:{type:Date},
   category:{type: String}
 }, {timestamps:true});
 

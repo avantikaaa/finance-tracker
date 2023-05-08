@@ -15,4 +15,4 @@ const BaseTransactionSchema = new Schema({
 const BaseTransaction = model('BaseTransaction', BaseTransactionSchema);
 
 
-module.exports = BaseTransaction;
+module.exports = {BaseTransaction, BaseTransactionSchema};
