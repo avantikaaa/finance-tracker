@@ -5,7 +5,7 @@
  - **addLending:** Inserts a lending transaction with relevant information into the database
  - **addExpense:** Inserts a expense transaction with relevant information into the database
  - **addIncome:** Inserts a income transaction with relevant information into the database
- - **settleTransaction:**id  : Settles a particular lending or borrowing with a particular user based on transaction id
+ - **settleTransaction:/id**  : Settles a particular lending or borrowing with a particular user based on transaction id
  - **profile:** Retrieves profile of user
  - **getCurrentLending:** Retrieves all the lending transactions made by the user
  - **getCurrentExpense:** Retrieves current expense amount grouped by category 
