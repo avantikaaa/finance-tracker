@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 services:
   client:
     build: ./client
@@ -18,5 +18,3 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-    volumes:
-      - /home/avi/programs/mongo/mongodb/data/:/data/
