@@ -1,0 +1,15 @@
+---
+- name: Run Docker Compose
+  hosts: local
+
+  tasks:
+    - name: Install Docker Compose
+      become: true
+      apt:
+        name: docker-compose
+        state: present
+
+    - name: Start Docker Compose services
+      become: true
+      command: docker-compose up
+        
