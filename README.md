@@ -2,6 +2,7 @@
 ## About the project
 
 ## Jenkins Pipeline
+```
 pipeline {
     agent any
     
@@ -66,3 +67,11 @@ pipeline {
         }
     }
 }
+```
+
+## Running the pipeline:
+1. Add your docker hub credentials to your Jenkins credential manager with the ID "docker_credentials".
+2. Update absolute path in the ansible playbook to point to the location where you will run the docker-compose file.
+3. Update the absolute path of the volume in the docker compose file to point to the location where you want to store the database.
+4. Trigger a build, either manually or through webhooks. This pulls 3 docker images for the frontend(client), backend(server) and the database(mongodb) respectively and starts their containers in the background.
+5. Visit: http://localhost:3000/ to use the application
