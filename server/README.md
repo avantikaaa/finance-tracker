@@ -1,0 +1,21 @@
+# API Documentation
+ - login        : Logs the current user into the application
+ - logout      : Logs the current user out of the application
+ - register      : Used to create a new user by storing user information into the database for authentication and usage of application later on
+ - addLending      : Inserts a lending transaction with relevant information into the database
+ - addExpense      : Inserts a expense transaction with relevant information into the database
+ - addIncome        : Inserts a income transaction with relevant information into the database
+ - settleTransaction/:id  : Settles a particular lending or borrowing with a particular user based on transaction id
+ - profile      : Retrieves profile of user
+ - getCurrentLending   : Retrieves all the lending transactions made by the user
+ - getCurrentExpense   : Retrieves current expense amount grouped by category 
+ - getCurrentIncome    : Retrieves all income for the user grouped by category
+ - getMonthly          : Retrieves monthly transactions for peer lending, total, expense grouped by date and amount
+ - getDues             : Retrieves amount due from each user in increasing order of due date approaching
+ - getHistory          : Retrieves all transactions made by the user till date
+ - getBalance      : Retrieves the balance amount for the user [based on the transactions that has occured]
+ - getFriends      : Retrieves the list of friends of the user
+ - getUserInfo     : Retrieve information about a particular user based on username
+ - updateInfo      : Update a user profile based on username
+ - addReminder     : Creates a reminder with the particular argument values as selected by the user
+ - getReminder     : Retrieves all reminders within a range of -15 days to 15 days [w.r.t current day] for the user.
