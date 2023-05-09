@@ -1,14 +1,14 @@
-version: '3.3'
+version: '3.5'
 services:
   client:
-    build: ./client
+    image: avantikaaa/finance-tracker-client
     ports:
       - "3000:3000"
     depends_on:
       - server
 
   server:
-    build: ./server
+    image: avantikaaa/finance-tracker-server
     ports:
       - "4000:4000"
     depends_on:
