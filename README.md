@@ -1,5 +1,6 @@
 # Finance tracker
 ## About the project
+This application provides the functionality to track expenses, analyse spending patterns and lend/borrow money from your peers at a mutually agreed upon interest rates. This lending system was inspired by the necessity to facilitate easier transactions amongst students that would give students financial freedom and help them in their various endeavors like financing projects in college. This application also provides a savings calculator that allows users to set target amounts and time frames for achieving their financial goals. This application aids users to keep a track of their expenses, income, and transactions with their friends.
 
 ## Jenkins Pipeline
 ```
