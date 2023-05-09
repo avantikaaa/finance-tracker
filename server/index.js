@@ -14,6 +14,9 @@ const cookieParser = require("cookie-parser");
 const bcrypt = require("bcrypt");
 const salt = bcrypt.genSaltSync(10);
 const jwt = require("jsonwebtoken");
+
+
+const winston = require('winston');
 	
 const secret = process.env.SECRET_KEY;
 const port = process.env.PORT || 4000;
@@ -22,6 +25,21 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
 app.use(cookieParser());
 
+
+// Define a logger that logs messages to a file.
+const logger = winston.createLogger({
+  // level: 'info',
+  format: winston.format.json(),
+  // defaultMeta: { service: 'my-service' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/info.log', level: 'info' }),
+    new winston.transports.File({ filename: 'logs/warn.log', level: 'warn' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+module.exports = logger;
 
 mongoose.set("strictQuery", true);
 // mongoose.connect(process.env.CONNECTION_STRING);

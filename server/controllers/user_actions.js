@@ -3,7 +3,7 @@ const User = require("../models/User");
 const lendingTransaction = require("../models/lendingTransaction");
 const expenseTransaction = require("../models/expenseTransaction");
 const incomeTransaction = require("../models/incomeTransaction");
-
+const logger = require('../index');
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -14,7 +14,11 @@ module.exports = {
 	profile: (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
+			logger.info("Profile fetched successfully");
 			res.json(info);
 		});
 	},
@@ -22,7 +26,10 @@ module.exports = {
 	getCurrentLending: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const date_now = new Date();
 			const start = fns.startOfMonth(date_now);
 			const user = await User.findOne({ username: info.username });
@@ -35,13 +42,17 @@ module.exports = {
 				},
 			]);
 			res.json(lend_transactions);
+			logger.info("Lended amount fetched successfully");
 		});
 	},
 
 	getCurrentExpense: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const date_now = new Date();
 			const start = fns.startOfMonth(date_now);
 			const user = await User.findOne({ username: info.username });
@@ -57,13 +68,17 @@ module.exports = {
 				},
 			]);
 			res.json(expense_transactions);
+			logger.info("Expenses fetched successfully");
 		});
 	},
 
 	getCurrentIncome: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const date_now = new Date();
 			const start = fns.startOfMonth(date_now);
 			const user = await User.findOne({ username: info.username });
@@ -79,13 +94,17 @@ module.exports = {
 				},
 			]);
 			res.json(income_transactions);
+			logger.info("Current income fetched successfully");
 		});
 	},
 
 	getMonthly: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const field = req.params.id;
 			const date_now = new Date();
 			const prev_six = fns.endOfMonth(fns.subMonths(date_now, 7));
@@ -141,13 +160,17 @@ module.exports = {
 				]);
 				res.json(monthly);
 			}
+			logger.info("Monthly expense fetched successfully");
 		});
 	},
 
 	getDues: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const user = await User.findOne({ username: info.username });
 			const date_now = new Date();
 			const month_end = fns.endOfMonth(new Date(2023, 5, 24));
@@ -175,13 +198,17 @@ module.exports = {
 
 			]);
 			res.json(dues);
+			logger.info("Dues fetched successfully");
 		});
 	},
 
 	getHistory: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const user = await User.findOne({ username: info.username });
 			const historyExpense = await expenseTransaction.find({from : user._id}, "from to amount date category");
 			const historyIncome = await incomeTransaction.find({to: user._id}, "from to amount date category");
@@ -190,13 +217,17 @@ module.exports = {
 				return new Date(b.date) - new Date(a.date);
 			  });
 			res.json(history);
+			logger.info("Transaction history fetched successfully");
 		});
 	},
 
 	getBalance: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const user = await User.findOne({ username: info.username });
 			const date_now = new Date();
 			const start = fns.startOfMonth(date_now);
@@ -242,13 +273,17 @@ module.exports = {
 				const deb_tot =  parseInt(LendingDeb.length > 0 ? LendingDeb[0].amount : 0) + parseInt(debit.length ? debit[0].amount : 0);
 	
 			res.json({ balance: user.balance, monthExpense: mExp, limit: user.limit, totalCred: cred_tot, totalDebit : deb_tot});
+			logger.info("Balance fetched successfully");
 		});
 	},
 
 	getFriends: async (req, res) => {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const user = await User.findOne({username: info.username});
 			const lends = await lendingTransaction.aggregate([
 				{
@@ -289,22 +324,30 @@ module.exports = {
 				}
 			]);
 			res.json({lends, borrows});
+			logger.info("Friends fetched successfully");
 		});
 	},
 	
 	getUserInfo: async(req, res)=>{
 		const {token} = req.cookies;
 		jwt.verify(token, secret, {}, async(err, info)=>{
-			if(err)throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const userDoc = await User.findOne({username: info.username}, "username name limit balance");
 			res.json(userDoc);
+			logger.info("User info fetched successfully");
 		})
 	},
 
 	updateInfo: async(req, res) =>{
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
-			if (err) throw err;
+			if (err){
+				logger.error('Unable to fetch profile', err);
+				throw err;
+			}
 			const {name, limit, balance} = req.body;
 			const upd = await User.findOneAndUpdate({username: info.username}, {
 				name: name,
@@ -314,6 +357,7 @@ module.exports = {
 				balance: balance
 			})
 			res.json(upd);
+			logger.info("Information updated successfully");
 		});
 	},
 }

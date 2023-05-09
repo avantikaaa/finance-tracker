@@ -9,6 +9,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2",
     "mongoose-extend-schema": "^1.0.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "winston": "^3.8.2"
   }
 }

@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const secret = process.env.SECRET_KEY;
 const salt = bcrypt.genSaltSync(10);
+const logger = require("../index");
 
 module.exports = {
 	login: async(req, res) => {
@@ -18,16 +19,20 @@ module.exports = {
 				username,
 				});
 			});
+			logger.info('Successful Login');
 			} else {
-			res.status(401).json({});
+				logger.warn('Invalid credentials');
+				res.status(401).json({});
 			}
 		} catch (e) {
 			console.log(e);
 			res.status(404).json(e);
+			logger.error('Something went wrong');
 		}
 	},
 
 	logout: async(req, res) => {
+		logger.info('Successful Logout');
 		res.cookie("token", "").json("ok");
 	},
 
@@ -51,13 +56,16 @@ module.exports = {
 				// yearOfStudy: yearOfStudy,
 				limit: limit,
 				});
+				logger.info('User created successfully');
 				res.json({ requestData: { username, password } });
 			} catch (e) {
 				console.log(e);
+				logger.error('Unkown Error');
 				res.status(404).json(e);
 			}
 		}
 		else{
+			logger.warn('Create user aborted: Username already in use');
 			res.status(409).json({});
 		}
 	}

@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const reminder = require("../models/reminder");
+const logger = require("../index");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -23,6 +24,7 @@ module.exports = {
 			const upd = await User.findByIdAndUpdate(usr._id, {
 			$push: { reminders: reminderDoc._id },
 			});
+			logger.info('Reminder added successfully');
 			res.json(reminderDoc);
 		});
 	},
@@ -42,6 +44,7 @@ module.exports = {
 					},
 				},
 			]);
+			logger.info('Reminder fetched successfully');
 			res.json(lend_transactions);
 		});
 	}
