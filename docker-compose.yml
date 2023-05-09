@@ -19,4 +19,4 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./data/db:/data/db:rw
+      - /home/avi/Desktop/spe/finance-tracker/data/db:/data/db:rw
