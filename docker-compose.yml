@@ -20,9 +20,3 @@ services:
       - "27017:27017"
     volumes:
       - /home/avi/programs/mongo/mongodb/data/:/data/
-
-  myservice:
-    image: copyback
-    volumes:
-      - myvolume:/data
-    entrypoint: /bin/bash /home/avi/Desktop/spe/finance-tracker/scripts/entrypoint.sh
