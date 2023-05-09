@@ -18,7 +18,6 @@ const Friends = () => {
       .then((friendData) => setFriendData(friendData));
   }, []);
 
-  console.log(friendData);
 
   return (
     <div className="friends">

@@ -8,8 +8,14 @@
       apt:
         name: docker-compose
         state: present
+    
+    # - name: Copy Docker Compose file
+    #   copy:
+    #     src: ./docker-compose.yml
+    #     dest: /home/avi/Desktop/spe/finance-tracker/docker-compose.yml
 
     - name: Start Docker Compose services
       become: true
-      command: docker-compose up
-        
+      command: docker-compose up --remove-orphans
+      args:
+        chdir: /home/avi/Desktop/spe/finance-tracker/

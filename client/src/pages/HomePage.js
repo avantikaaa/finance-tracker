@@ -88,7 +88,7 @@ export default function HomePage() {
                   <Link to="/addExpense"> Add Expense </Link>
                   <Link to="/addIncome"> Add Income </Link>
 
-        {userInfo ? <h1>Hello {userInfo.username}</h1> : <></>}
+        {userInfo ? <h1>Hello {userInfo.name}</h1> : <></>}
         <h2>Upcoming payments are as follows:</h2>
         <ul>
           {dues?.length > 0 &&
