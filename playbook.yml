@@ -4,7 +4,7 @@
 
   tasks:
     - name: Install Docker Compose
-      become: true
+      # become: true
       apt:
         name: docker-compose
         state: present
@@ -15,7 +15,7 @@
     #     dest: /home/avi/Desktop/spe/finance-tracker/docker-compose.yml
 
     - name: Start Docker Compose services
-      become: true
+      # become: true
       command: docker-compose up -d
       args:
         chdir: /home/avi/Desktop/spe/finance-tracker/
