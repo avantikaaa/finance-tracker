@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 4000
 
 # Do tests
-# CMD ["npm", "test"]
+CMD ["npm", "test"]
 
 # Define the command to start the application
 CMD ["node", "index.js"]
