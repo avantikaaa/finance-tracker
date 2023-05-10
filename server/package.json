@@ -11,5 +11,12 @@
     "mongoose-extend-schema": "^1.0.0",
     "nodemon": "^2.0.22",
     "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "s,upertest": "^6.3.3"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

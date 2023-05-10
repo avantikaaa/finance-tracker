@@ -1,22 +1,41 @@
-{"level":"error","message":"Something went wrong"}
-{"level":"error","message":"Something went wrong"}
-{"level":"info","message":"Successful Login"}
-{"level":"info","message":"Monthly expense fetched successfully"}
-{"level":"info","message":"Monthly expense fetched successfully"}
-{"level":"info","message":"Expenses fetched successfully"}
-{"level":"info","message":"Expenses fetched successfully"}
-{"level":"info","message":"Dues fetched successfully"}
-{"level":"info","message":"Dues fetched successfully"}
-{"level":"info","message":"Balance fetched successfully"}
-{"level":"info","message":"Balance fetched successfully"}
-{"level":"info","message":"Successful Logout"}
-{"level":"error","message":"Something went wrong"}
-{"level":"info","message":"Successful Login"}
-{"level":"info","message":"Expenses fetched successfully"}
-{"level":"info","message":"Dues fetched successfully"}
-{"level":"info","message":"Balance fetched successfully"}
-{"level":"info","message":"Monthly expense fetched successfully"}
-{"level":"info","message":"Expenses fetched successfully"}
-{"level":"info","message":"Dues fetched successfully"}
-{"level":"info","message":"Monthly expense fetched successfully"}
-{"level":"info","message":"Balance fetched successfully"}
+{"level":"warn","message":"Invalid credentials","timestamp":"2023-05-10T06:20:12.645Z"}
+{"level":"info","message":"Successful Login","timestamp":"2023-05-10T06:20:20.291Z"}
+{"level":"info","message":"Monthly expense fetched successfully","timestamp":"2023-05-10T06:20:20.672Z"}
+{"level":"info","message":"Monthly expense fetched successfully","timestamp":"2023-05-10T06:20:20.678Z"}
+{"level":"info","message":"Expenses fetched successfully","timestamp":"2023-05-10T06:20:20.737Z"}
+{"level":"info","message":"Dues fetched successfully","timestamp":"2023-05-10T06:20:20.748Z"}
+{"level":"info","message":"Balance fetched successfully","timestamp":"2023-05-10T06:20:20.749Z"}
+{"level":"info","message":"Expenses fetched successfully","timestamp":"2023-05-10T06:20:20.751Z"}
+{"level":"info","message":"Dues fetched successfully","timestamp":"2023-05-10T06:20:20.765Z"}
+{"level":"info","message":"Balance fetched successfully","timestamp":"2023-05-10T06:20:20.773Z"}
+{"level":"info","message":"Successful Login","timestamp":"2023-05-10T06:24:43.757Z"}
+{"level":"info","message":"Expenses fetched successfully","timestamp":"2023-05-10T06:24:43.843Z"}
+{"level":"info","message":"Dues fetched successfully","timestamp":"2023-05-10T06:24:43.846Z"}
+{"level":"info","message":"Balance fetched successfully","timestamp":"2023-05-10T06:24:43.851Z"}
+{"level":"info","message":"Monthly expense fetched successfully","timestamp":"2023-05-10T06:24:43.852Z"}
+{"level":"info","message":"Expenses fetched successfully","timestamp":"2023-05-10T06:24:43.862Z"}
+{"level":"info","message":"Dues fetched successfully","timestamp":"2023-05-10T06:24:43.866Z"}
+{"level":"info","message":"Monthly expense fetched successfully","timestamp":"2023-05-10T06:24:43.869Z"}
+{"level":"info","message":"Balance fetched successfully","timestamp":"2023-05-10T06:24:43.873Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:41:39.907Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:42:15.969Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:43:18.561Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:43:49.907Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:45:37.137Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:47:33.525Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:47:55.037Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:48:29.565Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:52:40.456Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:53:51.565Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T06:55:54.648Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:01:10.047Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:02:52.774Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:09:03.086Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:09:16.979Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:11:56.382Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:12:36.367Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:13:21.391Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:13:56.449Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:14:19.081Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:14:44.791Z"}
+{"level":"warn","message":"Create user aborted: Username already in use","timestamp":"2023-05-10T07:15:54.913Z"}

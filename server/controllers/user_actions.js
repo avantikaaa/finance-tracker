@@ -3,7 +3,7 @@ const User = require("../models/User");
 const lendingTransaction = require("../models/lendingTransaction");
 const expenseTransaction = require("../models/expenseTransaction");
 const incomeTransaction = require("../models/incomeTransaction");
-const logger = require('../index');
+const index = require('../index');
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -15,10 +15,10 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
-			logger.info("Profile fetched successfully");
+			index.logger.info("Profile fetched successfully");
 			res.json(info);
 		});
 	},
@@ -27,7 +27,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const date_now = new Date();
@@ -42,7 +42,7 @@ module.exports = {
 				},
 			]);
 			res.json(lend_transactions);
-			logger.info("Lended amount fetched successfully");
+			index.logger.info("Lended amount fetched successfully");
 		});
 	},
 
@@ -50,7 +50,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const date_now = new Date();
@@ -68,7 +68,7 @@ module.exports = {
 				},
 			]);
 			res.json(expense_transactions);
-			logger.info("Expenses fetched successfully");
+			index.logger.info("Expenses fetched successfully");
 		});
 	},
 
@@ -76,7 +76,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const date_now = new Date();
@@ -94,7 +94,7 @@ module.exports = {
 				},
 			]);
 			res.json(income_transactions);
-			logger.info("Current income fetched successfully");
+			index.logger.info("Current income fetched successfully");
 		});
 	},
 
@@ -102,7 +102,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const field = req.params.id;
@@ -160,7 +160,7 @@ module.exports = {
 				]);
 				res.json(monthly);
 			}
-			logger.info("Monthly expense fetched successfully");
+			index.logger.info("Monthly expense fetched successfully");
 		});
 	},
 
@@ -168,7 +168,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const user = await User.findOne({ username: info.username });
@@ -198,7 +198,7 @@ module.exports = {
 
 			]);
 			res.json(dues);
-			logger.info("Dues fetched successfully");
+			index.logger.info("Dues fetched successfully");
 		});
 	},
 
@@ -206,7 +206,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const user = await User.findOne({ username: info.username });
@@ -217,7 +217,7 @@ module.exports = {
 				return new Date(b.date) - new Date(a.date);
 			  });
 			res.json(history);
-			logger.info("Transaction history fetched successfully");
+			index.logger.info("Transaction history fetched successfully");
 		});
 	},
 
@@ -225,7 +225,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const user = await User.findOne({ username: info.username });
@@ -273,7 +273,7 @@ module.exports = {
 				const deb_tot =  parseInt(LendingDeb.length > 0 ? LendingDeb[0].amount : 0) + parseInt(debit.length ? debit[0].amount : 0);
 	
 			res.json({ balance: user.balance, monthExpense: mExp, limit: user.limit, totalCred: cred_tot, totalDebit : deb_tot});
-			logger.info("Balance fetched successfully");
+			index.logger.info("Balance fetched successfully");
 		});
 	},
 
@@ -281,7 +281,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const user = await User.findOne({username: info.username});
@@ -324,7 +324,7 @@ module.exports = {
 				}
 			]);
 			res.json({lends, borrows});
-			logger.info("Friends fetched successfully");
+			index.logger.info("Friends fetched successfully");
 		});
 	},
 	
@@ -332,12 +332,12 @@ module.exports = {
 		const {token} = req.cookies;
 		jwt.verify(token, secret, {}, async(err, info)=>{
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const userDoc = await User.findOne({username: info.username}, "username name limit balance");
 			res.json(userDoc);
-			logger.info("User info fetched successfully");
+			index.logger.info("User info fetched successfully");
 		})
 	},
 
@@ -345,7 +345,7 @@ module.exports = {
 		const { token } = req.cookies;
 		jwt.verify(token, secret, {}, async (err, info) => {
 			if (err){
-				logger.error('Unable to fetch profile', err);
+				index.logger.error('Unable to fetch profile', err);
 				throw err;
 			}
 			const {name, limit, balance} = req.body;
@@ -357,7 +357,7 @@ module.exports = {
 				balance: balance
 			})
 			res.json(upd);
-			logger.info("Information updated successfully");
+			index.logger.info("Information updated successfully");
 		});
 	},
 }

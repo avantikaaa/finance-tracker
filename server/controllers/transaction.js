@@ -3,7 +3,7 @@ const User = require("../models/User");
 const lendingTransaction = require("../models/lendingTransaction");
 const expenseTransaction = require("../models/expenseTransaction");
 const incomeTransaction = require("../models/incomeTransaction");
-const logger = require('../index');
+const index = require('../index');
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -36,7 +36,7 @@ module.exports = {
 			}
 			})
 			.then((err) => {
-				logger.error('Lend failed:', err);
+				index.logger.error('Lend failed:', err);
 			});
 		
 		User.findById(ufrom._id, "balance")
@@ -50,9 +50,9 @@ module.exports = {
 			}
 			})
 			.then((err) => {
-				logger.error('Lend failed:', err);
+				index.logger.error('Lend failed:', err);
 			});
-		logger.info('Lend Transaction recorded');
+		index.logger.info('Lend Transaction recorded');
 		res.json(transactionDoc);
 	},
 
@@ -80,10 +80,10 @@ module.exports = {
 			}
 			})
 			.then((err) => {
-				logger.error('Add expense failed:', err);
+				index.logger.error('Add expense failed:', err);
 			});
 			
-			logger.info('Expense added successfully:');
+			index.logger.info('Expense added successfully:');
 			res.json(transactionDoc);
 		});
 	},
@@ -112,9 +112,9 @@ module.exports = {
 			}
 			})
 			.then((err) => {
-				logger.error('Unable to add income:', err);
+				index.logger.error('Unable to add income:', err);
 			});
-			logger.info('Income added successfully');
+			index.logger.info('Income added successfully');
 			res.json(transactionDoc);
 		});
 	},
@@ -127,7 +127,7 @@ module.exports = {
 			const update_trans = await lendingTransaction.findByIdAndUpdate(trans_id, {
 				status: "settled",
 			});
-			logger.info('Transaction settled successfully');
+			index.logger.info('Transaction settled successfully');
 			res.json(update_trans);
 		});
 	}

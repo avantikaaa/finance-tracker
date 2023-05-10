@@ -40,27 +40,43 @@ const logger = winston.createLogger({
   ],
 });
 
-module.exports = logger;
+
 
 mongoose.set("strictQuery", true);
-mongoose.connect('mongodb://mongodb:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
-// mongoose.connect('mongodb://localhost:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB');
-  })
-  .catch((err) => {
-    console.error('Error connecting to MongoDB', err);
-  });
+beforeAll = (async () => {
+  // await mongoose.connect('mongodb://mongodb:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
+  await mongoose.connect('mongodb://localhost:27017/newdb', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+      console.log('Connected to MongoDB');
+    })
+    .catch((err) => {
+      console.error('Error connecting to MongoDB', err);
+    });
+});
+beforeAll();
 console.log("hi");
 // mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 5000, socketTimeoutMS: 5000 })
 //   .then(() => console.log('MongoDB connected...'))
 //   .catch(err => console.log(err));
+
+// var server;
+var server = app.listen(port);
+function stop() {
+  server.close(() => {
+    console.log('Server stopped');
+    process.exit(0);
+  });
+}
+
+module.exports = {logger, app, stop};
 
 const auth = require("./controllers/auth.js");
 const transaction_api = require("./controllers/transaction.js");
 const user_actions = require("./controllers/user_actions.js");
 const { getMonthly } = require("./controllers/user_actions.js");
 const reminders = require("./controllers/reminder.js");
+
+
 
 // actions for authentication
 app.post("/login", auth.login);
@@ -89,4 +105,5 @@ app.patch("/updateInfo", user_actions.updateInfo);
 app.post("/addReminder", reminders.addReminder);
 app.get("/getReminder", reminders.getReminder);
 
-app.listen(port);
+;
+// app.listen(port);
