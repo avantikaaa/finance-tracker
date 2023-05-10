@@ -1,5 +1,6 @@
 const request = require('supertest');
 const index = require('./index');
+const mongoose = require("mongoose");
 
 const app = index.app;
 // const server = index.server;
@@ -16,12 +17,17 @@ describe('POST /register', () => {
         .expect(409)
         .end((err, res) => {
           if (err) return done(err);
-          console.log(res.body);
-        //   expect(res.body).toBe({message: 'username in use'});
+          console.log(res.body.message);
+          expect(res.body.message).toBe("username in use");
           done();
         });
     });
 });
 
 
-index.stop();
+// index.stop();
+
+afterAll(() => {
+    index.server.close();
+    mongoose.connection.close();
+});

@@ -55,20 +55,19 @@ beforeAll = (async () => {
 });
 beforeAll();
 console.log("hi");
-// mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 5000, socketTimeoutMS: 5000 })
-//   .then(() => console.log('MongoDB connected...'))
-//   .catch(err => console.log(err));
 
-// var server;
-var server = app.listen(port);
-function stop() {
-  server.close(() => {
-    console.log('Server stopped');
-    process.exit(0);
-  });
-}
 
-module.exports = {logger, app, stop};
+var server = app.listen(port, () => {
+  console.log("listening on ", port);
+});
+// function stop() {
+//   server.close(() => {
+//     // console.log('Server stopped');
+//     process.exit(0);
+//   });
+// }
+
+module.exports = {logger, app, server};
 
 const auth = require("./controllers/auth.js");
 const transaction_api = require("./controllers/transaction.js");
