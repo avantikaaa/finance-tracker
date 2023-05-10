@@ -16,6 +16,9 @@ COPY . .
 # Make port 4000 available to the world outside this container
 EXPOSE 4000
 
+# Do tests
+CMD ["npm", "test"]
+
 # Define the command to start the application
 CMD ["node", "index.js"]
 

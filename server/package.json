@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "jest": "^29.5.0",
-    "s,upertest": "^6.3.3"
+    "supertest": "^6.3.3"
   },
   "scripts": {
     "test": "jest"

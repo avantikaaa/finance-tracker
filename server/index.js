@@ -44,8 +44,8 @@ const logger = winston.createLogger({
 
 mongoose.set("strictQuery", true);
 beforeAll = (async () => {
-  // await mongoose.connect('mongodb://mongodb:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
-  await mongoose.connect('mongodb://localhost:27017/newdb', { useNewUrlParser: true, useUnifiedTopology: true })
+  await mongoose.connect('mongodb://mongodb:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true })
+  // await mongoose.connect('mongodb://localhost:27017/newdb', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
       console.log('Connected to MongoDB');
     })
@@ -60,12 +60,6 @@ console.log("hi");
 var server = app.listen(port, () => {
   console.log("listening on ", port);
 });
-// function stop() {
-//   server.close(() => {
-//     // console.log('Server stopped');
-//     process.exit(0);
-//   });
-// }
 
 module.exports = {logger, app, server};
 

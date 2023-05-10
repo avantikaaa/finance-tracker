@@ -22,7 +22,7 @@ module.exports = {
 			index.logger.info('Successful Login');
 			} else {
 				index.logger.warn('Invalid credentials');
-				res.status(401).json({});
+				res.status(401).json({message: "invalid credentials"});
 			}
 		} catch (e) {
 			console.log(e);
